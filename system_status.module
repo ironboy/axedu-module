@@ -46,3 +46,21 @@ function system_status_block_view($block_name = '') {
     return $block;
   }
 }
+
+/**
+ * Implements hook_menu().
+ */
+function system_status_menu() {
+  $items = array();
+
+  $items['admin/config/system/system_status'] = array(
+    'title' => 'System status',
+    'description' => 'Set the system status, which can displayed as a block through the block system.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('system_status_form'),
+    'access arguments' => array('set syatem status'),
+  );
+
+  return $items;
+}
+
