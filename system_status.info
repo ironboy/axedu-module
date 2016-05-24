@@ -1,0 +1,8 @@
+name = System Status
+description = A module to display the current system status.
+core = 7.x
+package = AxisEdu
+files[] = system_status.module
+
+;dependencies[] = some_other_module
+;php = 5.5
