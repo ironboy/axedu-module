@@ -46,3 +46,31 @@ function system_status_block_view($block_name = '') {
     return $block;
   }
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function system_status_block_info() {
+  $blocks = array();
+  
+  $blocks['system_status'] = array(
+    'info' => t('The current system status'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function system_status_block_view($block_name = '') {
+  if ($block_name == 'system_status') {
+    $block = array(
+      'subject' => t('System Status'),
+      'content' => variable_get('system_status', ''),
+    );
+    
+    return $block;
+  }
+}
