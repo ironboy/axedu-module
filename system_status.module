@@ -58,7 +58,7 @@ function system_status_menu() {
     'description' => 'Set the system status, which can displayed as a block through the block system.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('system_status_form'),
-    'access arguments' => array('set syatem status'),
+    'access arguments' => array('set system status'),
   );
 
   return $items;
